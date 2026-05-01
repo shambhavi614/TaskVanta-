@@ -1,10 +1,11 @@
-# TaskFlow — Collaborative Project Management Platform
+# TaskVanta — Collaborative Project Management Platform
 
-![TaskFlow](https://img.shields.io/badge/Next.js-15-black?style=flat-square&logo=next.js)
-![React](https://img.shields.io/badge/React-19-blue?style=flat-square&logo=react)
-![Firebase](https://img.shields.io/badge/Firebase-12.12-orange?style=flat-square&logo=firebase)
-![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=flat-square&logo=typescript)
-![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
+<img width="1281" height="839" alt="image" src="https://github.com/user-attachments/assets/c6dc0cf7-9705-4bc6-9c06-0890fd87e3ca" />
+<img width="1904" height="906" alt="image" src="https://github.com/user-attachments/assets/f38941f3-b90f-40eb-85f2-952a5c39daeb" />
+<img width="543" height="716" alt="image" src="https://github.com/user-attachments/assets/607fb7ae-6132-4d57-af62-3a96f0d148f0" />
+<img width="559" height="779" alt="image" src="https://github.com/user-attachments/assets/365ee379-eab2-4bb2-a418-f8dba4806761" />
+
+
 
 A modern, fast, and intuitive collaborative project management platform that enables teams to create projects, assign tasks, track progress, and manage team members with real-time synchronization. Built with cutting-edge technologies for optimal performance and user experience.
 
@@ -32,7 +33,7 @@ A modern, fast, and intuitive collaborative project management platform that ena
 
 ## Overview
 
-TaskFlow is a comprehensive project management solution designed for modern teams. It provides a seamless interface for creating and managing projects, assigning tasks, collaborating with team members, and tracking project progress with real-time analytics. The platform emphasizes user experience with smooth animations, intuitive interfaces, and responsive design across all devices.
+TaskVanta is a comprehensive project management solution designed for modern teams. It provides a seamless interface for creating and managing projects, assigning tasks, collaborating with team members, and tracking project progress with real-time analytics. The platform emphasizes user experience with smooth animations, intuitive interfaces, and responsive design across all devices.
 
 ### Why TaskFlow?
 
