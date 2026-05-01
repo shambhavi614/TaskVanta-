@@ -1,0 +1,65 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Helper functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    function getUserId() {
+      return request.auth.uid;
+    }
+    
+    // Users collection
+    match /users/{userId} {
+      // Anyone authenticated can read user profiles (for member search)
+      allow read: if isAuthenticated();
+      
+      // Users can create/update their own profile
+      allow create: if isAuthenticated() && getUserId() == userId;
+      allow update: if isAuthenticated() && getUserId() == userId;
+    }
+    
+    // Projects collection
+    match /projects/{projectId} {
+      // Anyone authenticated can read projects (membership check happens in app)
+      allow read: if isAuthenticated();
+      
+      // Any authenticated user can create a project
+      allow create: if isAuthenticated() && 
+                       request.resource.data.createdBy == getUserId();
+      
+      // Anyone authenticated can update/delete (membership check in app)
+      allow update: if isAuthenticated();
+      allow delete: if isAuthenticated();
+    }
+    
+    // Project members collection
+    match /project_members/{membershipId} {
+      // Anyone authenticated can read memberships
+      allow read: if isAuthenticated();
+      
+      // Anyone authenticated can create memberships
+      allow create: if isAuthenticated();
+      
+      // Anyone authenticated can update/delete memberships
+      allow update: if isAuthenticated();
+      allow delete: if isAuthenticated();
+    }
+    
+    // Tasks collection
+    match /tasks/{taskId} {
+      // Anyone authenticated can read tasks
+      allow read: if isAuthenticated();
+      
+      // Anyone authenticated can create tasks
+      allow create: if isAuthenticated();
+      
+      // Anyone authenticated can update/delete tasks
+      allow update: if isAuthenticated();
+      allow delete: if isAuthenticated();
+    }
+  }
+}
