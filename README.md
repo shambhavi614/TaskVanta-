@@ -811,12 +811,6 @@ See [package.json](package.json) for complete dependency list.
 
 ---
 
-## 📄 License
-
-This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
-
----
-
 ## 🙏 Acknowledgments
 
 - Built with [Next.js](https://nextjs.org)
@@ -827,119 +821,6 @@ This project is licensed under the MIT License — see the [LICENSE](LICENSE) fi
 
 ---
 
-## 📞 Support
-
-For questions or support, please:
-
-1. Check the [Troubleshooting](#troubleshooting) section
-2. Search [Existing Issues](https://github.com/yourusername/task-manager/issues)
-3. Create a [New Issue](https://github.com/yourusername/task-manager/issues/new)
-4. Contact: [your-email@example.com]
-
----
-
-**Made with ❤️ by Your Team**
-
-Last Updated: April 2026
-   ```
-
-5. **Run the development server**
-   ```bash
-   npm run dev
-   ```
-
-6. **Open [http://localhost:3000](http://localhost:3000)**
-
-## 🔥 Firebase Setup
-
-### 1. Enable Authentication
-
-1. Go to Firebase Console → Authentication
-2. Enable **Email/Password** sign-in method
-
-### 2. Create Firestore Database
-
-1. Go to Firebase Console → Firestore Database
-2. Click **Create database**
-3. Choose **Production mode**
-4. Select your preferred location
-
-### 3. Set Firestore Security Rules
-
-Go to Firestore → Rules and paste:
-
-```javascript
-rules_version = '2';
-service cloud.firestore {
-  match /databases/{database}/documents {
-    
-    function isAuthenticated() {
-      return request.auth != null;
-    }
-    
-    function getUserId() {
-      return request.auth.uid;
-    }
-    
-    // Users collection
-    match /users/{userId} {
-      allow read: if isAuthenticated();
-      allow create, update: if isAuthenticated() && getUserId() == userId;
-    }
-    
-    // Projects collection
-    match /projects/{projectId} {
-      allow read: if isAuthenticated();
-      allow create: if isAuthenticated() && request.resource.data.createdBy == getUserId();
-      allow update, delete: if isAuthenticated();
-    }
-    
-    // Project members collection
-    match /project_members/{membershipId} {
-      allow read: if isAuthenticated();
-      allow create, update, delete: if isAuthenticated();
-    }
-    
-    // Tasks collection
-    match /tasks/{taskId} {
-      allow read: if isAuthenticated();
-      allow create, update, delete: if isAuthenticated();
-    }
-  }
-}
-```
-
-## 📁 Project Structure
-
-```
-task-manager/
-├── app/
-│   ├── actions/          # Server actions (legacy)
-│   ├── auth/            # Authentication pages
-│   │   ├── login/
-│   │   └── signup/
-│   ├── dashboard/       # Dashboard pages
-│   │   ├── projects/
-│   │   ├── settings/
-│   │   └── page.tsx
-│   ├── globals.css
-│   ├── layout.tsx
-│   └── page.tsx         # Landing page
-├── components/          # Reusable components
-│   ├── Header.tsx
-│   └── Sidebar.tsx
-├── lib/
-│   └── firebase/        # Firebase configuration
-│       ├── auth.ts      # Auth functions
-│       ├── config.ts    # Firebase init
-│       ├── firestore.ts # Database functions
-│       ├── projects.ts  # Project operations
-│       ├── tasks.ts     # Task operations
-│       ├── types.ts     # TypeScript types
-│       └── AuthContext.tsx
-├── middleware.ts        # Auth middleware
-└── package.json
-```
 
 ## 🗄️ Database Structure
 
@@ -1067,17 +948,7 @@ npm run start    # Start production server
 npm run lint     # Run ESLint
 ```
 
-## 🤝 Contributing
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test thoroughly
-5. Submit a pull request
-
-## 📄 License
-
-This project is for internal use. All rights reserved.
 
 ## 🙏 Acknowledgments
 
@@ -1085,8 +956,3 @@ This project is for internal use. All rights reserved.
 - Powered by Firebase
 - Styled with modern CSS
 
----
-
-**Last Updated:** 2026-04-30  
-**Version:** 1.0.0  
-**Built with** ❤️ **using Next.js & Firebase**
